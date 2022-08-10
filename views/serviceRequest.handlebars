@@ -1,0 +1,60 @@
+{{!-- boot strap page to post a service request 
+Title: Input Box
+Description: Input multiline text box
+and then list of all previous service requests
+--}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Service Request</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form id="serviceRequestForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        </div>       
+        <div class="form-group">
+          <div class="col-md-12 text-center m-2">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          </div>
+        </div>
+    </div>
+  </div>
+  {{#if serviceRequests.length }}
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Previous Service Requests</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>User ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each serviceRequests}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td>{{user_id}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{/if}}
+</div>
+<script src="/javascript/serviceRequest.js"></script>

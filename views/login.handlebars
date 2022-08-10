@@ -1,0 +1,60 @@
+{{!-- login and sign up card box bootstrap 5 show login as default if sign up button is clicked show sign up form --}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Login</h3>
+        </div>
+        <div class="card-body">
+          <form class="sign-in-form">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email-signin" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password-signin" name="password" placeholder="Password">
+            </div>
+            {{!-- submit button center of card  --}}
+            <div class="text-center mt-3">
+              <button type="submit" class="btn btn-primary btn-lg">Login</button>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Sign Up</h3>
+        </div>
+        <div class="card-body">
+          <form class="sign-up-form">
+            <div class="form-group">
+              <label for="name">User Name</label>
+              <input type="text" class="form-control" id="name-signup" name="name" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email-signup" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password-signup" name="password" placeholder="Password" required>
+            </div>
+              <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/javascript/login.js"></script>
+{{!-- form with gap bet --}}
