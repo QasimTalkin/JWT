@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const Users = require('../../../models/Users');
 const bcrypt = require('bcrypt');
+const createWebToken = require('../../../utils/createWebToken');
+
 
 router.get('/', async (req, res) => {
   const users = await Users.scope('withoutPassword').findAll({
@@ -24,7 +26,8 @@ router.post('/', async (req, res) => {
       req.session.user_id = dbUserData.user_id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-      res.json(dbUserData);
+      const token = createWebToken(dbUserData.user_id);
+      res.json({dbUserData, token});
     });
   }
   catch(error){
